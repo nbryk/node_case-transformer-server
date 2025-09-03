@@ -1,5 +1,3 @@
-// import http from 'node:http';
-// import { convertToCase } from './convertToCase';
 const http = require('http');
 const { convertToCase } = require('./convertToCase');
 
