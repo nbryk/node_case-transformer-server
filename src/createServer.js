@@ -27,10 +27,11 @@ function createServer() {
       });
     }
 
-    res.setHeader('Content-type', 'application/json');
+    res.setHeader('Content-Type', 'application/json');
 
     if (errors.length > 0) {
       res.statusCode = 400;
+      res.statusMessage = 'Bad request';
 
       const errorPayload = { errors: errors };
 
@@ -48,6 +49,8 @@ function createServer() {
       convertedText: convertedText,
     };
 
+    res.statusCode = 200;
+    res.statusMessage = 'OK';
     res.end(JSON.stringify(responsePayload));
   });
 
